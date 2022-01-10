@@ -1,0 +1,24 @@
+class Solution{
+    public:
+    string colName (long long int n)
+    {
+        int num;
+        string ans="";
+        while(n>0)
+        {
+            int num=n%26; 
+            if (num==0)
+            { 
+                ans+='Z'; 
+                n=(n/26)-1; 
+            } 
+            else
+            { 
+                ans+=(num-1)+'A'; 
+                n=n/26; 
+            } 
+        } 
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
