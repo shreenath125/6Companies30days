@@ -1,0 +1,11 @@
+class Solution{
+  public:
+      int FindMaxSum(int arr[], int n)
+      {
+          int ans[n+1]={0};
+          ans[1]=arr[0];
+          for(int i=1; i<n; i++)
+              ans[i+1]=std::max(arr[i]+ans[i-1], ans[i]);
+          return ans[n];
+      }
+};
